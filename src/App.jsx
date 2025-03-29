@@ -10,6 +10,7 @@ import Contact from './component/Contact/Contact'
 import Footer from './component/Footer/Footer'
 import Videoplayer from './component/Videoplayer/Videoplayer'
 import { useState } from "react";
+import "./index.css"
 
 
 

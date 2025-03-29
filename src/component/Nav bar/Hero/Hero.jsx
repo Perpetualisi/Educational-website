@@ -11,7 +11,7 @@ const Hero = () => {
             <p>Our cutting-edge curriculum is designed to empower students
                  with the knownledge,skills, and experiences needed to excel in 
                  the dynamic field of education</p> <br />
-                 <button className='btn'>Explore more <img src={dark_arrow} 
+                 <button className='btn'>Explore more <img className='imgg' src={dark_arrow} 
                  alt="" /> </button>
         </div>
       

@@ -1,28 +1,36 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Outfit", sans-serif;
-
+  max-width: 100%;
+  overflow-x: hidden;
 }
-body{
+
+html, body {
+  width: 100%;
+  overflow-x: hidden !important;
   background: #f5f5f5;
 }
-a{
+
+a {
   text-decoration: none;
-  color:inherit ;
+  color: inherit;
   line-height: 1;
   cursor: pointer;
 }
-.container{
-  padding-left: 10%;
-  padding-right: 10%;
+
+.container {
+  max-width: 1200px; /* Prevents exceeding screen width */
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin: 0 auto;
 }
-.btn{
+
+.btn {
   background: #fff;
   color: #212121;
   padding: 14px 25px;
@@ -33,23 +41,27 @@ a{
   outline: 0;
   display: inline-flex;
   align-items: center;
-  justify-content:center ;
+  justify-content: center;
 }
-.btn img{
-  width: 2opx;
+
+.btn img {
+  width: 20px; /* Fixed Typo */
   margin-left: 10px;
 }
-.btn.dark-btn{
-  background:#212EA0 ;
+
+.btn.dark-btn {
+  background: #212EA0;
   color: #fff;
 }
-/* media Query */
-@media (max-width:1200px){
-  .container{
+
+/* Media Query */
+@media (max-width: 1200px) {
+  .container {
     padding-left: 5%;
     padding-right: 5%;
   }
-  .btn{
+  
+  .btn {
     padding: 14px 22px;
   }
 }

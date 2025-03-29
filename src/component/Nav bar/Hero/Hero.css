@@ -14,14 +14,17 @@ justify-content: center;
     max-width: 800px;
 
 }
-hero-text h1{
+.hero-text h1{
     font-size:60px ;
     font-weight: 600;
 }
-hero-text p {
+.hero-text p {
     max-width: 700px;
     margin: 10px auto 20px;
     line-height: 1.4 ;
+}
+.imgg{
+  size:15pxpx ;  
 }
 /* ----------media query---------- */
 @media (max-width: 850px) {
