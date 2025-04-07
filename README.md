@@ -103,7 +103,4 @@ Contributions are welcome! If you’d like to contribute to the project, please 
 This project is open-source and available under the MIT License.
 ```
 
-You can view the live demo of the website here:
 
-[Educity University Live Demo](https://okan-perpetual-isi.vercel.app/)
-```
