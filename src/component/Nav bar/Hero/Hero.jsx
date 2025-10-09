@@ -6,8 +6,11 @@ const Hero = () => {
   return (
     <div className='hero container'>
       <div className='hero-text'>
-      <h1>Empowering Minds for a Brighter Future</h1>
-<p>At our institution, we offer an innovative curriculum designed to equip students with the knowledge, skills, and confidence to thrive in today’s ever-evolving world of education.</p>
+        <h1>Empowering Minds, Shaping Futures</h1>
+<p>
+  We provide an innovative curriculum designed to help students grow, learn, and succeed, 
+  fostering creativity, critical thinking, and the confidence to excel in an ever changing world.
+</p>
         <br />
         <a href="#campus" className='btn'>
           Explore more <img className='imgg' src={dark_arrow} alt="" />
