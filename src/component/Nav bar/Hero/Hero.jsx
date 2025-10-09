@@ -8,8 +8,7 @@ const Hero = () => {
       <div className='hero-text'>
         <h1>Empowering Minds, Shaping Futures</h1>
 <p>
-  We provide an innovative curriculum designed to help students grow, learn, and succeed, 
-  fostering creativity, critical thinking, and the confidence to excel in an ever changing world.
+  Innovative learning to grow, think, and succeed in a changing world.
 </p>
         <br />
         <a href="#campus" className='btn'>
