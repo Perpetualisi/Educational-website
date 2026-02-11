@@ -55,29 +55,28 @@ const Testimonial = () => {
   return (
     <section
       id="testimonial"
-      /* scroll-mt-32 prevents the Navbar from covering the Title above this section */
-      className="w-full max-w-[1000px] mx-auto my-20 px-10 relative scroll-mt-32"
+      /* REDUCED px-5 on mobile to give card more room */
+      className="w-full max-w-[1000px] mx-auto my-10 md:my-20 px-5 md:px-10 relative scroll-mt-32"
     >
-      <div className="flex items-center justify-center gap-4 md:gap-10">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-6">
         
-        {/* Navigation Buttons */}
+        {/* DESKTOP Navigation Button (Hidden on Mobile) */}
         <button
           onClick={slideBackward}
-          className="bg-[#212ea0] text-white p-3 md:p-4 rounded-full hover:bg-[#1a2580] transition-all hover:scale-110 shadow-lg z-10"
+          className="hidden md:flex bg-[#212ea0] text-white p-4 rounded-full hover:bg-[#1a2580] transition-all hover:scale-110 shadow-lg z-10"
           aria-label="Previous Testimonial"
         >
           <FaChevronLeft />
         </button>
 
-        {/* Testimonial Card */}
-        <div className="w-full bg-white p-6 md:p-10 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] min-h-[350px] flex flex-col items-center justify-center text-center transition-all duration-500 transform">
+        {/* Testimonial Card: Now w-full by default */}
+        <div className="w-full bg-white p-8 md:p-12 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] min-h-[380px] md:min-h-[400px] flex flex-col items-center justify-center text-center transition-all duration-500">
           <div className="relative mb-6">
             <img
               src={testimonials[currentIndex].image}
               alt={testimonials[currentIndex].name}
               className="w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-[#212ea0] object-cover shadow-md"
             />
-            {/* Visual Quote Decoration */}
             <span className="absolute -bottom-2 -right-2 bg-[#212ea0] text-white w-8 h-8 rounded-full flex items-center justify-center text-xl font-serif">
               “
             </span>
@@ -86,24 +85,39 @@ const Testimonial = () => {
           <h3 className="text-[#212ea0] text-xl md:text-2xl font-bold mb-1">
             {testimonials[currentIndex].name}
           </h3>
-          <p className="text-gray-500 font-medium mb-6 uppercase tracking-wide text-xs md:text-sm">
+          <p className="text-gray-500 font-semibold mb-6 uppercase tracking-widest text-[10px] md:text-xs">
             {testimonials[currentIndex].university}
           </p>
           
-          <div className="relative">
-             <p className="text-gray-700 leading-relaxed text-sm md:text-lg italic">
-              "{testimonials[currentIndex].review}"
-            </p>
-          </div>
+          <p className="text-gray-700 leading-relaxed text-base md:text-lg italic px-2">
+            "{testimonials[currentIndex].review}"
+          </p>
         </div>
 
+        {/* DESKTOP Navigation Button (Hidden on Mobile) */}
         <button
           onClick={slideForward}
-          className="bg-[#212ea0] text-white p-3 md:p-4 rounded-full hover:bg-[#1a2580] transition-all hover:scale-110 shadow-lg z-10"
+          className="hidden md:flex bg-[#212ea0] text-white p-4 rounded-full hover:bg-[#1a2580] transition-all hover:scale-110 shadow-lg z-10"
           aria-label="Next Testimonial"
         >
           <FaChevronRight />
         </button>
+
+        {/* MOBILE Navigation Buttons (Visible only on Mobile) */}
+        <div className="flex md:hidden gap-10 mt-2">
+           <button
+            onClick={slideBackward}
+            className="bg-[#212ea0] text-white p-4 rounded-full shadow-md active:scale-90 transition-transform"
+          >
+            <FaChevronLeft />
+          </button>
+          <button
+            onClick={slideForward}
+            className="bg-[#212ea0] text-white p-4 rounded-full shadow-md active:scale-90 transition-transform"
+          >
+            <FaChevronRight />
+          </button>
+        </div>
       </div>
 
       {/* Dots Indicator */}
@@ -112,7 +126,7 @@ const Testimonial = () => {
           <div
             key={index}
             className={`h-2 rounded-full transition-all duration-300 ${
-              index === currentIndex ? "w-8 bg-[#212ea0]" : "w-2 bg-gray-300"
+              index === currentIndex ? "w-10 bg-[#212ea0]" : "w-2 bg-gray-300"
             }`}
           />
         ))}

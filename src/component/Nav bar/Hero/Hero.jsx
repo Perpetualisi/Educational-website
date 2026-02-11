@@ -7,10 +7,8 @@ const Hero = () => {
   return (
     <section 
       id="hero"
-      /* min-h-[60vh] on mobile prevents the section from being too tall for the image.
-         md:min-h-screen on desktop gives that full-page look.
-      */
-      className="relative w-full min-h-[70vh] md:min-h-screen flex items-center overflow-hidden bg-slate-900 pt-[100px] md:pt-[150px] pb-12"
+      /* UPDATED pt-[150px] for mobile and md:pt-[200px] for desktop to clear the navbar */
+      className="relative w-full min-h-[70vh] md:min-h-screen flex items-center overflow-hidden bg-slate-900 pt-[150px] md:pt-[200px] pb-12"
     >
       {/* Top Gradient Overlay */}
       <div className="absolute top-0 left-0 w-full h-[200px] bg-gradient-to-b from-black/80 to-transparent z-10 pointer-events-none" />
@@ -20,10 +18,6 @@ const Hero = () => {
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `linear-gradient(to right, rgba(8, 12, 24, 0.7), rgba(8, 12, 24, 0.4)), url(${heroImage})`,
-          /* 'contain' would show the WHOLE image but leave big empty gaps. 
-             Instead, we use 'cover' with a 'center top' focus and 
-             responsive section heights to minimize cropping.
-          */
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat'
