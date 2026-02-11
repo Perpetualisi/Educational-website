@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './component/Nav bar/Navbar'
 import Hero from './component/Nav bar/Hero/Hero'
 import Program from './component/Program/Program'
@@ -9,39 +9,51 @@ import Testimonial from './component/Testimonial/Testimonial'
 import Contact from './component/Contact/Contact'
 import Footer from './component/Footer/Footer'
 import Videoplayer from './component/Videoplayer/Videoplayer'
-import { useState } from "react";
 import "./index.css"
 
-
-
-
 const App = () => {
-
-  const[playState, setPlayState] = useState(false);
-
-
+  const [playState, setPlayState] = useState(false);
 
   return (
     <div>
-      <Navbar/>
-      <Hero/>
+      <Navbar />
+      <Hero />
       <div className="container">
-      <Title subTitle= 'OUR PROGRAM' title= 'What We Offer'/>
-      <Program/>
-      <About setPlayState={setPlayState} />
-      <Title subTitle= 'Gallary' title= 'Campus Photos'/>
-      <Campus/>
-      <Title subTitle= 'TESTIMONIALS' title= 'What Students Says'/>
-      <Testimonial/>
-      <Title subTitle= 'Contact Us' title= 'Get in Touch'/>
-<Contact/>
-<Footer/>  
-      
+        
+        {/* PROGRAMS */}
+        <div id="programs" className="scroll-mt">
+          <Title subTitle='OUR PROGRAM' title='What We Offer' />
+          <Program />
+        </div>
+
+        {/* ABOUT (ID is usually inside About.jsx, but we can wrap it here too for safety) */}
+        <div id="about" className="scroll-mt">
+          <About setPlayState={setPlayState} />
+        </div>
+
+        {/* CAMPUS / GALLERY */}
+        <div id="campus" className="scroll-mt">
+          <Title subTitle='Gallery' title='Campus Photos' />
+          <Campus />
+        </div>
+
+        {/* TESTIMONIALS */}
+        <div id="testimonial" className="scroll-mt">
+          <Title subTitle='TESTIMONIALS' title='What Students Say' />
+          <Testimonial />
+        </div>
+
+        {/* CONTACT */}
+        <div id="contact" className="scroll-mt">
+          <Title subTitle='Contact Us' title='Get in Touch' />
+          <Contact />
+        </div>
+
+        <Footer />
       </div>
-      <Videoplayer playState={playState} setPlayState={setPlayState}/> 
+      <Videoplayer playState={playState} setPlayState={setPlayState} />
     </div>
   )
 }
 
 export default App
-

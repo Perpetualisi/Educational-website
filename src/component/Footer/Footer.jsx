@@ -1,15 +1,26 @@
-import React from 'react'
-import './Footer.css'
+import React from "react";
+
 const Footer = () => {
   return (
-    <div className='footer'>
-      <p>@ 2025 Edusity. All rights reserved.</p>
-      <ul>
-        <li>Terms of Services</li>
-        <li>Privacy Policy</li>
-      </ul>
-    </div>
-  )
-}
+    <footer className="mx-auto w-full py-6 mt-10 border-t border-gray-300 flex flex-col md:flex-row items-center justify-between text-gray-600 text-sm md:text-base">
+      
+      {/* Copyright Text */}
+      <p className="mb-4 md:mb-0">
+        © 2026 Edusity. All rights reserved.
+      </p>
 
-export default Footer
+      {/* Footer Links */}
+      <ul className="flex items-center gap-6 md:gap-10">
+        <li className="cursor-pointer hover:text-[#212EA0] transition-colors">
+          Terms of Service
+        </li>
+        <li className="cursor-pointer hover:text-[#212EA0] transition-colors">
+          Privacy Policy
+        </li>
+      </ul>
+
+    </footer>
+  );
+};
+
+export default Footer;

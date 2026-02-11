@@ -5,63 +5,77 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Outfit", sans-serif;
-  max-width: 100%;
-  overflow-x: hidden;
 }
 
 html, body {
   width: 100%;
-  overflow-x: hidden !important;
+  overflow-x: hidden;
   background: #f5f5f5;
+  /* Setting to auto because react-scroll handles the smoothness */
+  scroll-behavior: auto; 
 }
 
+/* THE SCROLL FIX:
+   Targets the IDs used in App.jsx to ensure the navbar 
+   doesn't cover the Title headings.
+*/
+#programs, #about, #campus, #testimonial, #contact {
+  scroll-margin-top: 140px;
+}
+
+@media (max-width: 768px) {
+  #programs, #about, #campus, #testimonial, #contact {
+    scroll-margin-top: 100px;
+  }
+}
+
+/* Base Styles */
 a {
   text-decoration: none;
   color: inherit;
-  line-height: 1;
   cursor: pointer;
 }
 
+/* Container for the main content. 
+   90% width provides a nice gutter on mobile screens.
+*/
 .container {
-  max-width: 1200px; /* Prevents exceeding screen width */
-  width: 100%;
-  padding-left: 5%;
-  padding-right: 5%;
+  max-width: 1200px;
+  width: 90%; 
   margin: 0 auto;
 }
 
+/* Global Button Styles */
 .btn {
-  background: #fff;
-  color: #212121;
   padding: 14px 25px;
   font-size: 16px;
   border-radius: 30px;
   cursor: pointer;
-  border: 0;
-  outline: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: 0.4s ease;
+  border: none;
+  outline: none;
 }
 
-.btn img {
-  width: 20px; /* Fixed Typo */
-  margin-left: 10px;
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.btn.dark-btn {
+.dark-btn {
   background: #212EA0;
   color: #fff;
 }
 
-/* Media Query */
-@media (max-width: 1200px) {
-  .container {
-    padding-left: 5%;
-    padding-right: 5%;
+/* Typography Responsiveness */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem !important;
+    line-height: 1.2;
   }
-  
-  .btn {
-    padding: 14px 22px;
+  h2 {
+    font-size: 1.8rem !important;
   }
 }
